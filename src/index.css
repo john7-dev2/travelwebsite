@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 25% 98%;
+    --foreground: 240 45% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 45% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 45% 12%;
+
+    --primary: 15 82% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 65% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 25% 94%;
+    --muted-foreground: 240 15% 45%;
+
+    --accent: 45 95% 65%;
+    --accent-foreground: 240 45% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 15 82% 58%;
+
+    --radius: 1.5rem;
+    
+    /* Travel Theme - Warm & Bold */
+    --coral: 15 82% 58%;
+    --coral-light: 15 82% 88%;
+    --coral-dark: 15 82% 38%;
+    --purple-deep: 280 65% 25%;
+    --purple-light: 280 65% 85%;
+    --amber: 45 95% 65%;
+    --amber-light: 45 95% 90%;
+    --cream: 30 25% 98%;
+    --navy: 240 45% 12%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 82% 58%) 0%, hsl(280 65% 45%) 50%, hsl(240 45% 25%) 100%);
+    --gradient-warm: linear-gradient(120deg, hsl(45 95% 65%) 0%, hsl(15 82% 58%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(280 65% 45%) 0%, hsl(240 45% 35%) 100%);
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(15 82% 58% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 100% 0%, hsl(280 65% 45% / 0.3) 0px, transparent 50%),
+                     radial-gradient(at 100% 100%, hsl(45 95% 65% / 0.3) 0px, transparent 50%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 60px -15px hsl(15 82% 58% / 0.3);
+    --shadow-card: 0 8px 30px -5px hsl(240 45% 12% / 0.12);
+    --shadow-glow: 0 0 60px hsl(15 82% 58% / 0.4);
+    --shadow-purple: 0 20px 60px -15px hsl(280 65% 45% / 0.4);
+    
+    --radius: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 45% 8%;
+    --foreground: 30 25% 98%;
+
+    --card: 240 35% 12%;
+    --card-foreground: 30 25% 98%;
+
+    --popover: 240 35% 12%;
+    --popover-foreground: 30 25% 98%;
+
+    --primary: 15 82% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 65% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 35% 18%;
+    --muted-foreground: 240 15% 65%;
+
+    --accent: 45 95% 70%;
+    --accent-foreground: 240 45% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 35% 18%;
+    --input: 240 35% 18%;
+    --ring: 15 82% 65%;
+    
+    --coral: 15 82% 65%;
+    --coral-light: 15 82% 35%;
+    --coral-dark: 15 82% 50%;
+    --purple-deep: 280 65% 35%;
+    --purple-light: 280 65% 25%;
+    --amber: 45 95% 70%;
+    --amber-light: 45 95% 35%;
+    --cream: 240 45% 8%;
+    --navy: 30 25% 98%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(15 82% 65%) 0%, hsl(280 65% 55%) 50%, hsl(240 45% 35%) 100%);
+    --gradient-warm: linear-gradient(120deg, hsl(45 95% 70%) 0%, hsl(15 82% 65%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(280 65% 55%) 0%, hsl(240 45% 45%) 100%);
+    --gradient-mesh: radial-gradient(at 0% 0%, hsl(15 82% 65% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 100% 0%, hsl(280 65% 55% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 100% 100%, hsl(45 95% 70% / 0.2) 0px, transparent 50%);
+    
+    --shadow-elegant: 0 20px 60px -15px hsl(15 82% 65% / 0.4);
+    --shadow-card: 0 8px 30px -5px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 60px hsl(15 82% 65% / 0.5);
+    --shadow-purple: 0 20px 60px -15px hsl(280 65% 55% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-warm);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2;
+  }
+  
+  .glass {
+    @apply bg-background/90 backdrop-blur-xl border border-border/30;
+  }
+  
+  .blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  
+  .rotate-slow {
+    animation: rotate 20s linear infinite;
+  }
+  
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  
+  @keyframes blob {
+    0%, 100% { 
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      transform: translate(0, 0) scale(1);
+    }
+    25% { 
+      border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    50% { 
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% { 
+      border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+      transform: translate(50px, 30px) scale(1.05);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s ease-in-out infinite;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  /* Accessibility improvements */
+  .focus-visible {
+    @apply outline-2 outline-primary outline-offset-2;
+  }
+  
+  /* Skip to main content link */
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md font-medium z-50 transition-all;
+  }
+  
+  .skip-link:focus {
+    @apply top-4;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-gradient {
+      @apply text-primary;
+      background-image: none;
+    }
+    
+    .glass {
+      @apply bg-background border-2 border-foreground;
+    }
+  }
+  
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Prevent horizontal overflow */
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Better text wrapping for mobile */
+    h1, h2, h3 {
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+    
+    /* Improve touch targets */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+  
+  /* Extra small devices */
+  @media (max-width: 475px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    
+    /* Reduce padding on very small screens */
+    section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-blob,
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .animate-slide-up,
+    .animate-fade-in,
+    .float,
+    .rotate-slow {
+      animation: none;
+    }
+    
+    .card-hover {
+      transition: none;
+    }
+  }
+}
