@@ -142,10 +142,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-poppins;
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   
   html {
     scroll-behavior: smooth;
+    /* Better viewport handling */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Improve image rendering on mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 
@@ -302,6 +315,7 @@ All colors MUST be HSL.
     /* Prevent horizontal overflow */
     body {
       overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
     
     /* Better text wrapping for mobile */
@@ -314,6 +328,21 @@ All colors MUST be HSL.
     button, a {
       min-height: 44px;
       min-width: 44px;
+    }
+    
+    /* Optimize tap highlighting */
+    * {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Better input handling on mobile */
+    input, textarea, select {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Smooth scrolling for mobile */
+    html {
+      scroll-padding-top: 4rem;
     }
   }
   
@@ -329,10 +358,59 @@ All colors MUST be HSL.
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
+    
+    /* Smaller text for very small screens */
+    h1 {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    h2 {
+      font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+  }
+  
+  /* Landscape mobile optimization */
+  @media (max-height: 600px) and (orientation: landscape) {
+    section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .min-h-screen, .min-h-\[100dvh\] {
+      min-height: auto;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    /* Better touch feedback */
+    button:active, a:active {
+      transform: scale(0.97);
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card-hover:hover {
+      transform: translateY(0);
+    }
+    
+    /* Show interactive states immediately on touch */
+    .group:active .group-hover\:scale-110 {
+      transform: scale(1.05);
+    }
   }
   
   /* Respect user's motion preferences */
   @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
     .animate-blob,
     .animate-slide-in-left,
     .animate-slide-in-right,
@@ -345,6 +423,41 @@ All colors MUST be HSL.
     
     .card-hover {
       transition: none;
+    }
+  }
+  
+  /* Safe area insets for notched devices */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    nav {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+  
+  /* Performance optimizations for mobile */
+  @media (max-width: 768px) {
+    /* Reduce blur effects on mobile for better performance */
+    .backdrop-blur-md {
+      backdrop-filter: blur(8px);
+    }
+    
+    .backdrop-blur-xl {
+      backdrop-filter: blur(12px);
+    }
+    
+    /* Optimize animations for mobile */
+    .animate-blob {
+      animation-duration: 10s;
+    }
+    
+    /* Reduce shadow complexity on mobile */
+    .shadow-2xl {
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
   }
 }
